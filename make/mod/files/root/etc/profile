@@ -1,10 +1,10 @@
 # /etc/profile
 #
 VERBOSE_RC_CONF=n
-. /etc/init.d/rc.conf
+. /etc/init.d/rc.conf 2>/dev/null
 
 export PATH=/mod/sbin:/mod/bin:/mod/usr/sbin:/mod/usr/bin:/mod/etc/init.d:/sbin:/bin:/usr/sbin:/usr/bin
-export LD_LIBRARY_PATH=/mod/lib:/mod/usr/lib
+export LD_LIBRARY_PATH=/mod/lib:/mod/usr/lib:/usr/lib/freetz
 
 tty="$(tty)"
 
