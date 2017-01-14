@@ -1,0 +1,56 @@
+config FREETZ_PACKAGE_CUSTOM_TOOLS
+	bool "custom tools"
+	default y
+	help
+	 	aes.c , aesciihexer.c , suidcmd.c , dummyshell.c , gol.c
+
+config FREETZ_PACKAGE_CUSTOM_TOOLS_aes
+	bool "aes"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS
+	default n
+	help
+		Enable the minimal aes (en|de)crypt app.
+
+config FREETZ_PACKAGE_CUSTOM_TOOLS_asciihexer
+	bool "asciihexer"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS
+	default n
+	help
+		Enable an ascii-2-hex converter.
+
+config FREETZ_PACKAGE_CUSTOM_TOOLS_suidcmd
+	bool "suidcmd"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS
+	default n
+	help
+		Enable suidcmd to run an arbitrary command as suid.
+
+config FREETZ_PACKAGE_CUSTOM_TOOLS_SUIDCMDS
+	string "commands"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS_suidcmd
+	default "/usr/sbin/ether-wake"
+	help
+		Allowed SUID commands (absolute path!), seperated by ','s.
+
+config FREETZ_PACKAGE_CUSTOM_TOOLS_dummyshell
+	bool "dummyshell"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS
+	default n
+	help
+		Enable an restrictive highly configurable minimal shell.
+
+config FREETZ_PATCH_CUSTOM_TOOLS_DUMMYSHELL_LOGIN_SHELL
+	bool "add dummyshell to /etc/shells"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS_dummyshell
+	default n
+	help
+		Add dummyshell to /etc/shells.
+
+config FREETZ_PACKAGE_CUSTOM_TOOLS_gol
+	bool "GameOfLife"
+	depends on FREETZ_PACKAGE_CUSTOM_TOOLS
+	depends on FREETZ_LIB_libncurses
+	default n
+	help
+		Ncurses based cellular automata.
