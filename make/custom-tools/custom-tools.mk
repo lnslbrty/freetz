@@ -1,4 +1,4 @@
-$(call PKG_INIT_BIN, f2ebdc58bb)
+$(call PKG_INIT_BIN, d7adb84634)
 $(PKG)_SOURCE:=tools-$($(PKG)_VERSION).tar.xz
 $(PKG)_SITE:=git://github.com/lnslbrty/tools.git
 $(PKG)_DIR:=$($(PKG)_SOURCE_DIR)/tools-$($(PKG)_VERSION)
