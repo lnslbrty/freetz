@@ -1,7 +1,7 @@
-$(call PKG_INIT_LIB, 1.0.11)
-$(PKG)_LIB_VERSION:=18.1.1
+$(call PKG_INIT_LIB, 1.0.15)
+$(PKG)_LIB_VERSION:=1.0.15
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
-$(PKG)_SOURCE_MD5:=b58928d035064b2a46fb564937b83540
+$(PKG)_SOURCE_MD5:=070373e73a0b10bd96f412e1732ebc42
 $(PKG)_SITE:=https://download.libsodium.org/libsodium/releases/
 
 $(PKG)_BINARY:=$($(PKG)_DIR)/$(pkg).so
@@ -11,6 +11,7 @@ $(PKG)_TARGET_BINARY:=$($(PKG)_TARGET_DIR)/$(pkg).so
 $(PKG)_CONFIGURE_OPTIONS += --enable-shared
 $(PKG)_CONFIGURE_OPTIONS += --enable-static
 $(PKG)_CONFIGURE_OPTIONS += --enable-minimal
+$(PKG)_CONFIGURE_OPTIONS += --enable-opt
 $(PKG)_CONFIGURE_OPTIONS += --disable-soname-versions
 $(PKG)_CONFIGURE_OPTIONS += --disable-blocking-random
 $(PKG)_CONFIGURE_OPTIONS += $(if $(FREETZ_TARGET_IPV6_SUPPORT),--enable-ipv6,--disable-ipv6)
