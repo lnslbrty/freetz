@@ -1,6 +1,6 @@
-$(call PKG_INIT_BIN, 1.8.1)
+$(call PKG_INIT_BIN, 1.9.5)
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
-$(PKG)_SOURCE_MD5:=86a490447c4b80ef0c0c1ecb30fa4d6e
+$(PKG)_SOURCE_MD5:=0307c9a555c370b74ed3807b20d12971
 $(PKG)_SITE:=https://download.dnscrypt.org/dnscrypt-proxy/
 
 $(PKG)_BINARY:=$($(PKG)_DIR)/src/proxy/dnscrypt-proxy
