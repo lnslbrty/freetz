@@ -1,6 +1,6 @@
 $(call PKG_INIT_BIN, 1.9.5)
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
-$(PKG)_SOURCE_MD5:=0307c9a555c370b74ed3807b20d12971
+$(PKG)_SOURCE_MD5:=ccfe666a30dac2de3b024ee561368d84
 $(PKG)_SITE:=https://download.dnscrypt.org/dnscrypt-proxy/
 
 $(PKG)_BINARY:=$($(PKG)_DIR)/src/proxy/dnscrypt-proxy
@@ -15,7 +15,7 @@ $(PKG)_CONFIGURE_ENV += LDFLAGS="$(TARGET_LDFLAGS)"
 $(PKG)_CONFIGURE_ENV += AR="$(TARGET_AR)"
 $(PKG)_CONFIGURE_ENV += RANLIB="$(TARGET_RANLIB)"
 $(PKG)_CONFIGURE_ENV += NM="$(TARGET_NM)"
-$(PKG)_CONFIGURE_OPTIONS += --host "$(GNU_TARGET_NAME)" --disable-largefile --prefix=/usr
+$(PKG)_CONFIGURE_OPTIONS += --host "$(GNU_TARGET_NAME)" --disable-largefile --prefix=/usr --enable-plugins
 
 $(PKG)_RESOLVERS_FILE:=$($(PKG)_DIR)/dnscrypt-resolvers.csv
 $(PKG)_TARGET_RESOLVERS_FILE:=$($(PKG)_DEST_DIR)/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv

@@ -1,7 +1,7 @@
-$(call PKG_INIT_LIB, 1.0.15)
-$(PKG)_LIB_VERSION:=1.0.15
+$(call PKG_INIT_LIB, 1.0.16)
+$(PKG)_LIB_VERSION:=1.0.16
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
-$(PKG)_SOURCE_MD5:=070373e73a0b10bd96f412e1732ebc42
+$(PKG)_SOURCE_MD5:=37b18839e57e7a62834231395c8e962b
 $(PKG)_SITE:=https://download.libsodium.org/libsodium/releases/
 
 $(PKG)_BINARY:=$($(PKG)_DIR)/$(pkg).so
@@ -44,8 +44,6 @@ $(pkg)-precompiled: $($(PKG)_TARGET_BINARY)
 
 $(pkg)-clean:
 	-$(SUBMAKE) -C $(LIBSODIUM_DIR) clean
-#	$(RM) -r $(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libpcap* \
-#		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/include/pcap*
 
 $(pkg)-uninstall:
 	$(RM) $(LIBSODIUM_TARGET_DIR)/libsodium*.so*
