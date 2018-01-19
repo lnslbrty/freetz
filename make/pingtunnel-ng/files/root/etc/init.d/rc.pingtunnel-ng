@@ -10,12 +10,12 @@ start() {
 	[ -z "$PINGTUNNELNG_EXTRA" ] && PINGTUNNELNG_EXTRA="--syslog"
 	modlib_startdaemon $DAEMON_BIN \
 		$PINGTUNNELNG_EXTRA \
-		--magic $PINGTUNNELNG_MAGIC \
-		--passwd $PINGTUNNELNG_PASSWORD \
-		--daemon $PID_FILE \
-		--chroot /tmp/$DAEMON_BIN \
-		--user nobody \
-		--group nobody
+		--magic=$PINGTUNNELNG_MAGIC \
+		--passwd=$PINGTUNNELNG_PASSWORD \
+		--daemon=$PID_FILE \
+		--chroot=/tmp/$DAEMON_BIN \
+		--user=nobody \
+		--group=nobody
 }
 
 stop_post() {
